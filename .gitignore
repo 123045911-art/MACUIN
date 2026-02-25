@@ -1,0 +1,24 @@
+# --- Generales ---
+.DS_Store
+.env
+.vscode/
+.idea/
+
+# --- Python (API e InternoFlask) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.python-version
+
+# --- Laravel (ExternoLaravel) ---
+/ExternoLaravel/vendor/
+/ExternoLaravel/node_modules/
+/ExternoLaravel/public/storage
+/ExternoLaravel/storage/*.key
+/ExternoLaravel/.phpunit.result.cache
+
+# --- Docker ---
+.docker/
