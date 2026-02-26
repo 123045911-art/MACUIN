@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Base de Datos
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: macuin_db
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "3306:3306"
+    volumes:
+      # Este volumen carga tu script SQL automáticamente al iniciar
+      - ./BaseDeDatos/macuin_db.sql:/docker-entrypoint-initdb.d/setup.sql
+
+  # Cliente Externo (Laravel)
+  laravel-app:
+    build: ./ExternoLaravel
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  # Cliente Interno (Flask)
+  flask-app:
+    build: ./InternoFlask
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db

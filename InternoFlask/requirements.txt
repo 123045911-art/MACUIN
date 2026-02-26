@@ -1,0 +1,11 @@
+# Framework Web
+Flask==3.0.0
+
+# Comunicación con la API Central
+requests==2.31.0
+
+# Manejo de variables de entorno
+python-dotenv==1.0.0
+
+# Utilidades de sesión
+Flask-Session==0.5.0
